@@ -1,13 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AdminPage from './AdminPage';
+import ProductsPage from './ProductsPage';
 import RegistrationPage from './RegistrationPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <RegistrationPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RegistrationPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
